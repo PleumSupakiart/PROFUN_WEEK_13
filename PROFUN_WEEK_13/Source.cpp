@@ -15,16 +15,20 @@ Num cornvert(int* num)
     Num n;
     int bin_num[128];
     int i = 0;
-    if (*num != 0 || *num > 0)
+    if (*num != 0 )
     {
-        while (*num != 0)
+        if (*num > 0 || *num < 0)
         {
-            n.bin_digit = *num % 2;
-            bin_num[i] = n.bin_digit;
-            *num /= 2;
-            i++;
+            while (*num != 0)
+            {
+                n.bin_digit = *num % 2;
+                bin_num[i] = n.bin_digit;
+                *num /= 2;
+                i++;
+            }
         }
     }
+   
 
     cout << "Binary : ";
     for (int j = i - 1; j >= 0; j--)
